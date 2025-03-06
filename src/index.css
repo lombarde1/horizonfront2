@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-background text-text;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background-light;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-light;
+}
+
+/* Utility classes */
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 flex items-center justify-center;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary hover:bg-primary-light text-white;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary hover:bg-secondary-light text-background;
+  }
+  
+  .btn-action {
+    @apply btn bg-action hover:bg-action-light text-white;
+  }
+  
+  .btn-outline {
+    @apply btn border-2 border-primary text-white hover:bg-primary/20;
+  }
+  
+  .card {
+    @apply bg-background-light rounded-lg overflow-hidden shadow-lg transition-all duration-300;
+  }
+  
+  .input {
+    @apply bg-background-lighter border border-background-lighter rounded-md px-4 py-2 text-text w-full focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-200;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .game-card {
+    @apply card hover:scale-105 hover:shadow-[0_0_15px_rgba(121,40,202,0.5)] cursor-pointer;
+  }
+  
+  .neon-text {
+    @apply text-primary;
+    text-shadow: 0 0 5px rgba(121, 40, 202, 0.7), 0 0 10px rgba(121, 40, 202, 0.5);
+  }
+  
+  .gold-text {
+    @apply text-secondary;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.7), 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  
+  .glass-effect {
+    @apply bg-background-light/30 backdrop-blur-md border border-white/10 rounded-lg;
+  }
+}
+
+/* Animations */
+.number-roll-animation {
+  animation: numberRoll 0.1s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Slick carousel customizations */
+.slick-dots li button:before {
+  @apply text-primary;
+}
+
+.slick-dots li.slick-active button:before {
+  @apply text-action;
+}
