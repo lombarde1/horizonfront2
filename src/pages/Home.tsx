@@ -18,14 +18,6 @@ interface Game {
   provider: string;
 }
 
-interface Game {
-  name: string;
-  imageUrl: string;
-  category: string;
-  isActive: boolean;
-  provider: string;
-}
-
 const generateGameKey = (game: Game) => `${game.provider}-${game.name}`.toLowerCase().replace(/\s+/g, '-');
 
 const Home: React.FC = () => {
@@ -66,6 +58,10 @@ const Home: React.FC = () => {
     } finally {
       setClaimingBonus(false);
     }
+  };
+
+  const navigateToAdmin = () => {
+    navigate('/admin');
   };
 
   useEffect(() => {
@@ -212,6 +208,15 @@ const Home: React.FC = () => {
       </main>
       
       <Footer />
+      
+      {/* Botão discreto para Admin */}
+      <div className="fixed bottom-2 right-2 opacity-10 hover:opacity-30 transition-opacity">
+        <button 
+          onClick={navigateToAdmin}
+          className="w-2 h-2 bg-background-lighter rounded-full"
+          aria-label="Admin"
+        />
+      </div>
       
       {/* Bonus Already Claimed Popup */}
       <AnimatePresence>
