@@ -7,7 +7,7 @@ import Banner from '../components/Banner';
 import GameCard from '../components/GameCard';
 import LoadingScreen from '../components/LoadingScreen';
 import { useAuth } from '../contexts/AuthContext';
-import { Gift, X, Wallet, ArrowRight } from 'lucide-react';
+import { Gift, X, Wallet, ArrowRight, Settings } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface Game {
@@ -209,13 +209,15 @@ const Home: React.FC = () => {
       
       <Footer />
       
-      {/* Botão discreto para Admin */}
-      <div className="fixed bottom-2 right-2 opacity-10 hover:opacity-30 transition-opacity">
+      {/* Botão discreto para Admin - mais visível, mas ainda sutil */}
+      <div className="fixed bottom-4 right-4 z-30">
         <button 
           onClick={navigateToAdmin}
-          className="w-2 h-2 bg-background-lighter rounded-full"
+          className="w-8 h-8 bg-background-light opacity-20 hover:opacity-60 rounded-full flex items-center justify-center transition-opacity shadow-md"
           aria-label="Admin"
-        />
+        >
+          <Settings size={14} className="text-text-muted" />
+        </button>
       </div>
       
       {/* Bonus Already Claimed Popup */}
