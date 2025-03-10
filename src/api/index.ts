@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://api.horizon777.online';
+const API_BASE_URL = 'https://horizon777api-production.up.railway.app';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
