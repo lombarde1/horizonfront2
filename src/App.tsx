@@ -13,7 +13,7 @@ import Withdraw from './pages/Withdraw';
 import GameDetails from './pages/GameDetails';
 import DinoGame from './pages/DinoGame';
 import Profile from './pages/Profile';
-import Admin from './pages/Admin.tsx';
+import Admin from './pages/Admin'; // Removida a extensão .tsx
 import NotFound from './pages/NotFound';
 
 // Components
