@@ -60,9 +60,7 @@ const Home: React.FC = () => {
     }
   };
 
-  const navigateToAdmin = () => {
-    navigate('/admin');
-  };
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -209,16 +207,7 @@ const Home: React.FC = () => {
       
       <Footer />
       
-      {/* Botão discreto para Admin - mais visível, mas ainda sutil */}
-      <div className="fixed bottom-4 right-4 z-30">
-        <button 
-          onClick={navigateToAdmin}
-          className="w-8 h-8 bg-background-light opacity-20 hover:opacity-60 rounded-full flex items-center justify-center transition-opacity shadow-md"
-          aria-label="Admin"
-        >
-          <Settings size={14} className="text-text-muted" />
-        </button>
-      </div>
+     
       
       {/* Bonus Already Claimed Popup */}
       <AnimatePresence>
