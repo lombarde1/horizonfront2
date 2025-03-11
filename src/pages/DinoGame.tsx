@@ -206,7 +206,7 @@ const DinoGame: React.FC = () => {
     
     try {
       // Chamar a API para registrar o pulo
-      const response = await fetch(`https://horizonapi2-production.up.railway.app//api/dino/${gameState._id}/jump`, {
+      const response = await fetch(`https://horizon777api-production.up.railway.app//api/dino/${gameState._id}/jump`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -292,7 +292,7 @@ const DinoGame: React.FC = () => {
       
       try {
         // Chamar a API para finalizar o jogo
-        const response = await fetch(`https://horizonapi2-production.up.railway.app//api/dino/${gameState._id}/end`, {
+        const response = await fetch(`https://horizon777api-production.up.railway.app//api/dino/${gameState._id}/end`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -384,7 +384,7 @@ const DinoGame: React.FC = () => {
       setCountdownValue(null);
       
       // Chamar a API para iniciar um novo jogo
-      const response = await fetch('https://horizonapi2-production.up.railway.app//api/dino/start', {
+      const response = await fetch('https://horizon777api-production.up.railway.app//api/dino/start', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
